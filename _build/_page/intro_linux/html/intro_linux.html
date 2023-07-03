@@ -1,0 +1,926 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Introducción a Linux &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'intro_linux';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Jupyter Book</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Introducción a Linux
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/intro_linux.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introducción a Linux</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-linux">Qué es Linux</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-linux">Uso de linux</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comandos-basicos">Comandos básicos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ls-listar">ls (listar)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-de-los-directorios">Estructura de los directorios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-directorios">Crear directorios</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mkdir-make-directory">mkdir (make directory)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cambiar-directorios">Cambiar directorios</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cd-change-directory">cd (change directory)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#home">~ (home)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copiar-archivos">Copiar archivos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cp-copy">cp (copy)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-tab">Usando [TAB]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moviendo-archivos">Moviendo archivos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remover-archivos-y-directorios">Remover archivos y directorios</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mostrar-los-contenidos-de-un-archivo-en-la-pantalla">Mostrar los contenidos de un archivo en la pantalla</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-the-contents-of-a-file">Searching the contents of a file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusiones-la-linea-de-comando">Conclusiones: la línea de comando</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts-ejecutables">Scripts Ejecutables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-a-file-executable">Make a file executable</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-declaraciones-y-loops">Variables, declaraciones y loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if">If</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop">While loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop">For loop</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introduccion-a-linux">
+<h1>Introducción a Linux<a class="headerlink" href="#introduccion-a-linux" title="Permalink to this heading">#</a></h1>
+<p>El curso de fundamentos de biología computacional tiene como objetivo familiarizar a los estudiantes con las herramientas para abordar preguntas biológicas complejas que requieren computación. Para esto existe un sistema operativo muy versátil llamado Linux</p>
+<section id="que-es-linux">
+<h2>Qué es Linux<a class="headerlink" href="#que-es-linux" title="Permalink to this heading">#</a></h2>
+<p>Un sistema operativo (como Windows,….) <a class="reference external" href="https://www.linux.com/what-is-linux/">linux</a>
+Tiene una curva de aprendizaje que requiere cierto nivel de paciencia, pero afortunadamente hay múltiples [tutoriales]
+(<a class="reference external" href="https://ryanstutorials.net/linuxtutorial/">https://ryanstutorials.net/linuxtutorial/</a>)</p>
+</section>
+<section id="uso-de-linux">
+<h2>Uso de linux<a class="headerlink" href="#uso-de-linux" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Sólo Linux: Ubuntu</p></li>
+<li><p>En Windows: <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux</a>
+o como una <a class="reference external" href="https://helpdeskgeek.com/linux-tips/how-to-install-ubuntu-in-virtualbox/">Virtual Machine</a></p></li>
+</ul>
+</section>
+<section id="comandos-basicos">
+<h2>Comandos básicos<a class="headerlink" href="#comandos-basicos" title="Permalink to this heading">#</a></h2>
+<p>En linux es usual el uso de la terminal
+<img src="terminal_icon.png" width=150 height=150 />
+Este es un ambiente menos gráfico pero mas sencillo para dar instrucciones…psin embargo hay que saber como darlas para que el sistema responda.</p>
+<section id="ls-listar">
+<h3>ls (listar)<a class="headerlink" href="#ls-listar" title="Permalink to this heading">#</a></h3>
+<p>Cuando se entra al sistema, el directorio donde uno se encuentra es el <em>home</em>. Para saber que hay dentro de <em>home</em>, escribimos</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>$ ls
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  Cell In[1], line 1
+    $ ls
+    ^
+SyntaxError: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p>El comando ls lista el contenido de directorio de trabajo (current directory).</p>
+<p>Pero ls no lista realmene todos los archivos, solo aquellos que son visibles. Los archivos que comienzan con un punto (.) y se conocen como ocultos. Usualmente contienen informacion importante de configuracion que no debe ser alterada, a menos que sepamos bien que estamos haciendo.</p>
+<p>Ahora listemos todos los archivos del directorio, incluyendo los ocultos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>$ ls -a
+</pre></div>
+</div>
+</div>
+</div>
+<p>ls es un ejemplo de un comando con opciones: -a es un ejemplo de una opción. Las opciones cambianel comportamiento del comando.</p>
+<div class="alert alert-block alert-warning">
+<b>Nota 1:</b> los nombres de archivos en linux son sensibles a mayúsculas y minúsculas (*case sensitive*), i.e. Test.txt es diferente de test.txt y ambos archivos pueden coexistir en una carpeta. 
+<b>Nota 2:</b> los espacios generan muchos errores en los nombres de archivos y carpetas. Es mejor reemplazarlos por guión inferior, i.e Texto Final 2.txt reemplazar por Texto\_Final\_2.txt </div>
+</section>
+</section>
+<section id="estructura-de-los-directorios">
+<h2>Estructura de los directorios<a class="headerlink" href="#estructura-de-los-directorios" title="Permalink to this heading">#</a></h2>
+<p>Todos los archivos están  agrupados en la estructura del directorio y esta estructura es jerárquica.</p>
+<img src="unix-tree.png" width=400 height=400 />
+<p>Para saber donde nos encontramos en la estructura del directorio usamos el comando “print working directory”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>$ pwd
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="crear-directorios">
+<h2>Crear directorios<a class="headerlink" href="#crear-directorios" title="Permalink to this heading">#</a></h2>
+<section id="mkdir-make-directory">
+<h3>mkdir (make directory)<a class="headerlink" href="#mkdir-make-directory" title="Permalink to this heading">#</a></h3>
+<p>Utilizamos este comando para crear un subdirectorio en el directorio donde estamos</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>$ mkdir biocomp_clase1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para ver el directorio que acabamos de crear escribimos</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>$ ls
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-info">
+<b>Ejercicio</b> crea una carpeta dentro de biocomp_clase1 que se llame "ejercicios"</div></section>
+</section>
+<section id="cambiar-directorios">
+<h2>Cambiar directorios<a class="headerlink" href="#cambiar-directorios" title="Permalink to this heading">#</a></h2>
+<section id="cd-change-directory">
+<h3>cd (change directory)<a class="headerlink" href="#cd-change-directory" title="Permalink to this heading">#</a></h3>
+<p>Utilizamos este comando para cambiar del directorio donde estamos a otro directorio. Para “entrar” al directorio que acabamos de crear escribirmos</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>$ cd biocomp_clase1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Escriba ls para ver que hay en el directorio (debería estar vacío).
+Para volver al directorio parental escribimos</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>$ cd ..
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si seguimos escribiendo <span style='font-family:"Times New Roman"; color:Blue'> cd ..  </span> recurrentemente vamos subiendo en la jerarquía de directorios</p>
+</section>
+<section id="home">
+<h3>~ (home)<a class="headerlink" href="#home" title="Permalink to this heading">#</a></h3>
+<p>Si escribimos <span style='font-family:"Times New Roman"; color:Blue'> cd  </span> sin puntos llegamos al directorio home. Este se denota también como <span style='color:Blue'> <span style='font-family:"Times New Roman"'> ~  </span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">~/</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="copiar-archivos">
+<h2>Copiar archivos<a class="headerlink" href="#copiar-archivos" title="Permalink to this heading">#</a></h2>
+<section id="cp-copy">
+<h3>cp (copy)<a class="headerlink" href="#cp-copy" title="Permalink to this heading">#</a></h3>
+<p>El comando para copiar un archivos arch1 en el directorio actual a un archivo identico pero nombrado arch2 es:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>$ cp arch1 arch2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora vamos a tomar un archivo de internet y a usar el comando cp para copiarlo en el directorio que creamos.</p>
+<p>Primero, cd al directorio biocomp_clase1:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>$ cd ~/biocomp_clase1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Luego escribe:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>$ wget http://www.ee.surrey.ac.uk/Teaching/Unix/science.txt
+</pre></div>
+</div>
+</div>
+</div>
+<p>Qué crees que hace el comando wget?</p>
+<div class="alert alert-block alert-info">
+<b>Ejercicio</b> crea una copia backup del archivo "science.txt" que descargaste, llamada "science.bak" </div></section>
+<section id="usando-tab">
+<h3>Usando [TAB]<a class="headerlink" href="#usando-tab" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">[TAB]</span></code> es muy útil en la línea de comandos de Linux: completa automaticamente los comandos que se utilizan. Intenta, por ejemplo, <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cd</span> <span class="pre">~/bioc</span></code> y después <code class="docutils literal notranslate"><span class="pre">TAB</span></code>. Esto también ayudará a hacer sugerencias en caso de múltiples opciones.</p>
+</section>
+<section id="moviendo-archivos">
+<h3>Moviendo archivos<a class="headerlink" href="#moviendo-archivos" title="Permalink to this heading">#</a></h3>
+<p><strong>mv (move)</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">arch1</span> <span class="pre">arch2</span></code> mueve o cambia el nombre de <code class="docutils literal notranslate"><span class="pre">arch1</span></code> a <code class="docutils literal notranslate"><span class="pre">arch2</span></code> y por lo tanto solo queda un</p>
+<p>Vamos a mover el archivo <code class="docutils literal notranslate"><span class="pre">science.bak</span></code> a al folder <code class="docutils literal notranslate"><span class="pre">ejercicios</span></code> creado previamente.</p>
+<p>Primero, cambia de directorio a <code class="docutils literal notranslate"><span class="pre">biocomp_clase1</span></code>. Despué escribe:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mv science.bak ejercicios/
+</pre></div>
+</div>
+<p>escribe <code class="docutils literal notranslate"><span class="pre">ls</span></code> y <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">backup</span></code> para ver si funcionó.</p>
+</section>
+<section id="remover-archivos-y-directorios">
+<h3>Remover archivos y directorios<a class="headerlink" href="#remover-archivos-y-directorios" title="Permalink to this heading">#</a></h3>
+<p><strong>rm (remove), rmdir (remove directory)</strong></p>
+<p>Para borrar (remover) un archivos, usamos el comando <code class="docutils literal notranslate"><span class="pre">rm</span></code> command. Como ejemplo, vamos a crear una copia del archivo <code class="docutils literal notranslate"><span class="pre">science.txt</span></code> y borrarlo.</p>
+<p>dentro del directorio <code class="docutils literal notranslate"><span class="pre">biocomp_clase1</span></code>, escribe:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cp science.txt tempfile.txt 
+$ ls
+$ rm tempfile.txt
+$ ls
+</pre></div>
+</div>
+<p>Puedes utilizar el comando <code class="docutils literal notranslate"><span class="pre">rmdir</span></code> para remover el directorio (aségurate primero que esté vacío). Intenta remover el directorio <code class="docutils literal notranslate"><span class="pre">backup</span></code>. No podrás porque linux no te permitirá remover un directorio que no está vacío. Para borrar un directorio (que no esté vacío) con sus subdirectorios puedes usar <code class="docutils literal notranslate"><span class="pre">-r</span></code> (recursivo):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rm -r /path/directory
+</pre></div>
+</div>
+<p>Este comando pedirá confirmación para algunos archivos que sean importantes. Si estás absolutamente seguro de este paso, puedes añadir el comando <code class="docutils literal notranslate"><span class="pre">-f</span></code> (f de forzar):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rm -rf /path/delete
+</pre></div>
+</div>
+<div class="alert alert-block alert-danger">
+<b>Atención</b> Los directorios que se borran con ``rm`` se pierden *para siempre*. No van a ni siquiera a la papelera, si borran directamente.
+ </div></section>
+<section id="mostrar-los-contenidos-de-un-archivo-en-la-pantalla">
+<h3>Mostrar los contenidos de un archivo en la pantalla<a class="headerlink" href="#mostrar-los-contenidos-de-un-archivo-en-la-pantalla" title="Permalink to this heading">#</a></h3>
+<p><strong>less</strong></p>
+<p>El comando <code class="docutils literal notranslate"><span class="pre">less</span></code> muestra los contenidos de un archivo en la pantalla. Escribe:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ less science.txt
+</pre></div>
+</div>
+<p>Presiona la <code class="docutils literal notranslate"><span class="pre">[barra-espaciadora]</span></code> si quieres continuar hacia abajo, y escribe <code class="docutils literal notranslate"><span class="pre">[q]</span></code> si quieres terminar la lectura.</p>
+<p><strong>head</strong></p>
+<p>El comando <code class="docutils literal notranslate"><span class="pre">head</span></code> muestra las diez primeras lineas de un archivo en la pantalla:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ head science.txt
+</pre></div>
+</div>
+<p>luego escribe:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ head -5 science.txt
+</pre></div>
+</div>
+<p>Qué diferencia hizo el <code class="docutils literal notranslate"><span class="pre">-5</span></code> en el comando?</p>
+<p><strong>tail</strong></p>
+<p>El comando tail muestra las últimas 10 lineas de un archivo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ tail science.txt
+</pre></div>
+</div>
+<div class="alert alert-block alert-info">
+<b>Ejercicio</b> Como podrías ver las últimas 15 lineas de un archivo? </div></section>
+<section id="searching-the-contents-of-a-file">
+<h3>Searching the contents of a file<a class="headerlink" href="#searching-the-contents-of-a-file" title="Permalink to this heading">#</a></h3>
+<p><strong>Búsequeda Simple usando <code class="docutils literal notranslate"><span class="pre">less</span></code></strong></p>
+<p>Usando <code class="docutils literal notranslate"><span class="pre">less</span></code>, se puede buscar dentro de un archivo de texto palabras (un patrón). Por ejemplo, para buscar dentro del archivo <code class="docutils literal notranslate"><span class="pre">science.txt</span></code> la palabra “science”, escribimos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ less science.txt
+</pre></div>
+</div>
+<p>después, aún en <code class="docutils literal notranslate"><span class="pre">less</span></code>, escribe slash <code class="docutils literal notranslate"><span class="pre">[/]</span></code> seguido por la palabra a buscar:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">science</span>
+</pre></div>
+</div>
+<p>Y <code class="docutils literal notranslate"><span class="pre">[enter]</span></code>. Escribe <code class="docutils literal notranslate"><span class="pre">[n]</span></code> para buscar por la siguiente ocurrencia en el texto.</p>
+<p><strong>grep</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">grep</span></code> busca en el archivo palabras o patrones dentro de un texto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep science science.txt
+</pre></div>
+</div>
+<p>Como se puede ver, <code class="docutils literal notranslate"><span class="pre">grep</span></code> muestra cada línea que contiene la palabra science.
+Ahora intente escribir la palabra con mayúscula:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep Science science.txt
+</pre></div>
+</div>
+<p>El comando <code class="docutils literal notranslate"><span class="pre">grep</span></code> es “case sensitive”, distingue entre S y s.</p>
+<p>Para ignorar distinciones entre mayúsculas y minúsculas, utilice la opción <code class="docutils literal notranslate"><span class="pre">-i</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep -i science science.txt
+</pre></div>
+</div>
+<p>Para buscar una frase o patrón, se debe encerrarla entre comillas. Por ejemplo, para buscar spinning top, escriba:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep -i &#39;spinning top&#39; science.txt
+</pre></div>
+</div>
+<p>Otras opciones de <code class="docutils literal notranslate"><span class="pre">grep</span></code> son:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-v</span></code> muestra las líneas que NO contienen el patrón</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-n</span></code> precede cada línea que contiene el patrón con el número de línea</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-c</span></code> muestra el número total de líneas que contienen el patrón</p></li>
+</ul>
+<p>Intente las diferentes opciones y sus combinaciones. Se pueden utilizar mas de una opción al mismo tiempo! Por ejemplo, el número de líneas sin la palabra science or Science es:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep -ivc science science.txt
+</pre></div>
+</div>
+</section>
+<section id="conclusiones-la-linea-de-comando">
+<h3>Conclusiones: la línea de comando<a class="headerlink" href="#conclusiones-la-linea-de-comando" title="Permalink to this heading">#</a></h3>
+<p>La línea de comando de linux es muy poderoso. Tan poderoso que la gran mayoría de los servidores y super computadoras del mundo funcionan con los sistemas linux (sin interfase gráfica, i.e. usando solamente la línea de comando).</p>
+<p>Aquí navegamos por algunos ejemplos simples, pero esto es solo un “abre-bocas”. Por ejemplo, el comando <code class="docutils literal notranslate"><span class="pre">grep</span></code> es muy importante y útil para buscar patrones, and <code class="docutils literal notranslate"><span class="pre">wget</span></code> para bajar archivos. Ambos comandos mucho mas rápidos que si se usaran la interfase gráfica.</p>
+<p>Para profundizar sobre linux hay varios tutoriales, por ejemplo <a class="reference external" href="https://ryanstutorials.net/linuxtutorial/">tutoria llinux</a></p>
+</section>
+</section>
+<section id="scripts-ejecutables">
+<h2>Scripts Ejecutables<a class="headerlink" href="#scripts-ejecutables" title="Permalink to this heading">#</a></h2>
+<p>Ahora que ya estamos un poco familiarizados con la línea de comando, vamos a utilizar algunas herramientas básicas de programación: al digitar un comando, este da una instrucción para recibir una inofrmación. Este proceso se puede <strong>automatizar</strong> (por ejemplo mover, renombrar y copiar archivos), escribiendo el comando en un <strong>script</strong>.</p>
+<p>Los scripts son la forma mas simple de escribir un programa. Vamos a escribir un <strong>script bash</strong> y a ejecutarlo.</p>
+<p>Dentro del directorio <code class="docutils literal notranslate"><span class="pre">biocomp_clase1</span></code> vamos a crear un nuevo archivo llamado <code class="docutils literal notranslate"><span class="pre">miscript.sh</span></code>. You can do this using the default (graphical) text editor in MyBinder. Puedes hacer esto utilizando un  editor de texto de terminal llamado <code class="docutils literal notranslate"><span class="pre">nano</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ nano miscript.sh
+</pre></div>
+</div>
+<p>Este comando inicia el editor de texto. A continuación escriba <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">Hello</span> <span class="pre">World!</span></code>. “Hello World!” es una frase icónica en programación y “echo” es una instrucción que reproduce el texto que sigue. Guarde el archivo usando <code class="docutils literal notranslate"><span class="pre">[ctrl-o]</span> <span class="pre">[enter]</span></code>  y cierre el programa con <code class="docutils literal notranslate"><span class="pre">[ctrl-x]</span></code>. En la terminal, ejecute el script con el siguiente comando:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ bash miscript.sh
+</pre></div>
+</div>
+<p><strong>Bash</strong> es un “interpretador” que lee el archivo y entiende cómo ejecutar el comando.</p>
+<section id="make-a-file-executable">
+<h3>Make a file executable<a class="headerlink" href="#make-a-file-executable" title="Permalink to this heading">#</a></h3>
+<p>Liste los archivos en el directorio con la opción <code class="docutils literal notranslate"><span class="pre">-l</span></code> para mas información. Here is how it looks like on MyBinder:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -l
+total 12
+-rw-r--r-- 1 usuario root   18 Jun 26 10:56 myscript.sh
+</pre></div>
+</div>
+<p>La primera lista de caracteres indica los <strong>permisos</strong> del archivo. Aquí vemos que el usuario tiene permiso de lectura (<code class="docutils literal notranslate"><span class="pre">r</span></code>) y escritura (<code class="docutils literal notranslate"><span class="pre">w</span></code>), pero no de ejecución.
+Para entender mejor este tema puede consultar este <a class="reference external" href="https://ryanstutorials.net/linuxtutorial/permissions.php">tutorial sobre permisos</a>. Vamos a cambiar el permiso de ejecución</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ chmod a+x miscript.sh
+</pre></div>
+</div>
+<p>Ahora todos los usuarios tienen permiso para ejecutar el archivo. Como es un script muy simple y sin consecuencias, no nos preocupa que todos tengan permisos. En otros casos es muy importante tener cuidado. Ahora lo podemos ejecutar:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./myscript.sh
+</pre></div>
+</div>
+<div class="alert alert-block alert-warning">
+<b>Ejemplo de script:</b> Con frecuencia se recomienda añadir una primera línea en el scrip que indica el interpretador que se debe usar. En este caso es el interpretador por defecto (bash), pero no es siempre el caso. Además se usa escribir una línea que describe el propósito del script y que está precedida por el símbolo ``r`` que indica que es un comentario
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+# Script de ejemplo para la clase 1 de Comp. Biol
+
+echo Hello World!
+</pre></div>
+</div>
+</section>
+</section>
+<section id="variables-declaraciones-y-loops">
+<h2>Variables, declaraciones y loops<a class="headerlink" href="#variables-declaraciones-y-loops" title="Permalink to this heading">#</a></h2>
+<p>Una variable: …</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>$ counter=1
+$ echo $counter 
+$ 1
+$ echo counter
+$ counter
+</pre></div>
+</div>
+</div>
+</div>
+<p>Qué diferencia hay entre <code class="docutils literal notranslate"><span class="pre">counter</span></code> y <code class="docutils literal notranslate"><span class="pre">$counter</span></code>? Que la segunda es una <strong>variable</strong> y por lo tanto puede tomar cualquier valor según lo definamos.</p>
+<section id="if">
+<h3>If<a class="headerlink" href="#if" title="Permalink to this heading">#</a></h3>
+<p>Una declaracion (statement) condicional es <strong>if</strong> y determina que, si un chequeo es verdadero, realice una acción, y si es falso no lo haga. <strong>If</strong> tiene el siguiente formato:</p>
+<p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">[</span> <span class="pre">&lt;un</span> <span class="pre">chequeo&gt;</span> <span class="pre">]</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">then</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;comando&gt;</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">fi</span></code></p>
+<p>Todo lo que esté entre <em>then</em> y <em>fi</em> se ejecutará solamente is el chequeo (entre corchetes) es verdadero.
+Un ejemplo simple</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>$ num1=10
+$ num2=5
+
+if [ $num1 -gt $num2 ]; then
+echo &quot;num1 es $num1 y es mayor que $num2&quot;
+fi
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="while-loop">
+<h3>While loop<a class="headerlink" href="#while-loop" title="Permalink to this heading">#</a></h3>
+<p>Los loops son muy importantes porque permiten que un comando corra recurrentemente hasta que suceda una situación declarada (statement) o la expresión sea falsa. Este principio es fundamental para la automatización.
+El loop <strong>while</strong> define que, mientras una expresión es verdadera, continúe ejecutando las líneas de código. Tiene el siguiente formato</p>
+<p><code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">[</span> <span class="pre">un</span> <span class="pre">chequeo</span> <span class="pre">]</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">do</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;comando&gt;</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">done</span></code></p>
+<p>Ahora vamos a escribir un loop para imprimir los numeros del 1 al 10</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>$ counter=1
+$ while [ $counter -le 10 ]
+$ do
+$ echo $counter
+$ ((counter++))
+$ done
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vamos a descomponer las líneas:</p>
+<ul class="simple">
+<li><p>Linea 1: inicializa la variable <strong>counter</strong> con un valor.</p></li>
+<li><p>Linea 2: Chequea que mientras (<strong>While</strong>) la declaración es verdad (counter es menor o igual a 10)</p></li>
+<li><p>Linea 3: ejecutemos el siguiente comando.</p></li>
+<li><p>Linea 4: aquí podemos poner cualquier comando. En este caso Here <strong>echo</strong> se utiliza porque es simple para ilustrar el propósito.</p></li>
+<li><p>Linea 6: incrementamos la variable <strong>counter</strong> por 1.</p></li>
+<li><p>Linea 7: al final del loop, vuelve al inicio a hacer el chequeo. Si es verdad, ejecuta el comando, si es falso conitnua a la siguiente linnea.</p></li>
+</ul>
+<p>Este programa que ejecutamos en la terminal lo podemos escribir en un script para correrlo las veces que necesitemos y para registrar lo que hicimos</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>$ nano while_loop.sh
+
+#!/bin/bash
+# Basic while loop
+counter=1
+while [ $counter -le 10 ]
+do
+echo $counter
+((counter++))
+done
+echo All done
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">[ctrl-o]</span> <span class="pre">[enter]</span></code> y <code class="docutils literal notranslate"><span class="pre">[ctrl-x]</span></code></p>
+<div class="alert alert-block alert-info">
+<b>Ejercicio</b> Haga el script ejecutable y córralo </div></section>
+<section id="for-loop">
+<h3>For loop<a class="headerlink" href="#for-loop" title="Permalink to this heading">#</a></h3>
+<p>Este loop toma cada item en una lista (en orden, uno despeués del otro), asigna ese item como valor a la variable <strong>var</strong>, ejecuta los comandos entre <strong>do</strong> y <strong>done</strong> y vuelve al inicio para tomar el siguiente item y repetir recurrentemente.  Tiene la siguiente sintaxis:</p>
+<p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">var</span> <span class="pre">in</span> <span class="pre">&lt;list&gt;</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">do</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;comando&gt;</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">done</span></code></p>
+<p>El siguiente ejemplo ilustra su uso en un directorio que contiene los archivos fasta de secuencias de covid19. Primero vamos a crear un directorio que se llame <strong>sars_covid19</strong> y luego vamos a descargar allí las secuencias del:</p>
+<ul class="simple">
+<li><p>genoma</p></li>
+<li><p>proteinas</p></li>
+<li><p>cds (genes codificadores de proteínas)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>$ mkdir sars_covid19
+$ cd sars_covid19
+$ curl http://ftp.ensemblgenomes.org/pub/viruses/fasta/sars_cov_2/dna/Sars_cov_2.ASM985889v3.dna_rm.toplevel.fa.gz -o ./sars_covid19/Sars_cov.dna.fa.gz
+$ curl http://ftp.ensemblgenomes.org/pub/viruses/fasta/sars_cov_2/pep/Sars_cov_2.ASM985889v3.pep.all.fa.gz -o ./sars_covid19/Sars_cov.prot.fa.gz
+$ curl http://ftp.ensemblgenomes.org/pub/viruses/fasta/sars_cov_2/cds/Sars_cov_2.ASM985889v3.cds.all.fa.gz -o ./sars_covid19/Sars_cov.cds.fa.gz
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>curl</strong> (“Client url”) es un comando de línea que permite comunicarse con un servidor. La opción <code class="docutils literal notranslate"><span class="pre">-o</span></code> le asigna un nombre al archivo (en este caso simplificamos el nombre). Donde crees que quedaron los archivos?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>cd sars-covid19
+for f in $(ls);
+    do wc -l $f;
+        done
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note como listamos el directorio usando <code class="docutils literal notranslate"><span class="pre">ls</span></code> y lo encerramos en el comanod  <code class="docutils literal notranslate"><span class="pre">$()</span></code>. Esto nos permite crear una variable que contiene el resultado del comando <code class="docutils literal notranslate"><span class="pre">ls</span></code>.
+Luego iteramos sobre cada item del directorio <strong>sars_covid19</strong> y contamos el número de líneas con <code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">-l</span></code></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-linux">Qué es Linux</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-linux">Uso de linux</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comandos-basicos">Comandos básicos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ls-listar">ls (listar)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-de-los-directorios">Estructura de los directorios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-directorios">Crear directorios</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mkdir-make-directory">mkdir (make directory)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cambiar-directorios">Cambiar directorios</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cd-change-directory">cd (change directory)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#home">~ (home)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copiar-archivos">Copiar archivos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cp-copy">cp (copy)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-tab">Usando [TAB]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moviendo-archivos">Moviendo archivos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remover-archivos-y-directorios">Remover archivos y directorios</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mostrar-los-contenidos-de-un-archivo-en-la-pantalla">Mostrar los contenidos de un archivo en la pantalla</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-the-contents-of-a-file">Searching the contents of a file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusiones-la-linea-de-comando">Conclusiones: la línea de comando</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts-ejecutables">Scripts Ejecutables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-a-file-executable">Make a file executable</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-declaraciones-y-loops">Variables, declaraciones y loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if">If</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop">While loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop">For loop</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
