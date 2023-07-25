@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Introducción a Linux &#8212; My Jupyter Book</title>
+    <title>My Jupyter Book</title>
   
   
   
@@ -67,6 +67,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro_linux';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -141,7 +143,7 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
-    <p class="title logo__title">My Jupyter Book</p>
+    <p class="title logo__title">None</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -197,54 +199,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="_sources/intro_linux.ipynb" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
   title="Fullscreen mode"
@@ -294,49 +248,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-linux">Qué es Linux</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-linux">Uso de linux</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comandos-basicos">Comandos básicos</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ls-listar">ls (listar)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-de-los-directorios">Estructura de los directorios</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-directorios">Crear directorios</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mkdir-make-directory">mkdir (make directory)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cambiar-directorios">Cambiar directorios</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cd-change-directory">cd (change directory)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#home">~ (home)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copiar-archivos">Copiar archivos</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cp-copy">cp (copy)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-tab">Usando [TAB]</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moviendo-archivos">Moviendo archivos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remover-archivos-y-directorios">Remover archivos y directorios</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mostrar-los-contenidos-de-un-archivo-en-la-pantalla">Mostrar los contenidos de un archivo en la pantalla</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-the-contents-of-a-file">Searching the contents of a file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusiones-la-linea-de-comando">Conclusiones: la línea de comando</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts-ejecutables">Scripts Ejecutables</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-a-file-executable">Make a file executable</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-declaraciones-y-loops">Variables, declaraciones y loops</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if">If</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop">While loop</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop">For loop</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -348,11 +259,9 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduccion-a-linux">
 <h1>Introducción a Linux<a class="headerlink" href="#introduccion-a-linux" title="Permalink to this heading">#</a></h1>
-<p>El curso de fundamentos de biología computacional tiene como objetivo familiarizar a los estudiantes con las herramientas para abordar preguntas biológicas complejas que requieren computación. Para esto existe un sistema operativo muy versátil llamado Linux</p>
 <section id="que-es-linux">
 <h2>Qué es Linux<a class="headerlink" href="#que-es-linux" title="Permalink to this heading">#</a></h2>
-<p>Un sistema operativo (como Windows,….) <a class="reference external" href="https://www.linux.com/what-is-linux/">linux</a>
-Tiene una curva de aprendizaje que requiere cierto nivel de paciencia, pero afortunadamente hay múltiples [tutoriales]
+<p><a class="reference external" href="https://www.linux.com/what-is-linux/">Linux</a> es un sistema operativo muy versátil. Tiene una curva de aprendizaje que requiere cierto nivel de paciencia, pero afortunadamente hay múltiples [tutoriales]
 (<a class="reference external" href="https://ryanstutorials.net/linuxtutorial/">https://ryanstutorials.net/linuxtutorial/</a>)</p>
 </section>
 <section id="uso-de-linux">
@@ -365,9 +274,10 @@ o como una <a class="reference external" href="https://helpdeskgeek.com/linux-ti
 </section>
 <section id="comandos-basicos">
 <h2>Comandos básicos<a class="headerlink" href="#comandos-basicos" title="Permalink to this heading">#</a></h2>
-<p>En linux es usual el uso de la terminal
+<p>En linux es usual el uso de la terminal</p>
+<figure>
 <img src="terminal_icon.png" width=150 height=150 />
-Este es un ambiente menos gráfico pero mas sencillo para dar instrucciones…psin embargo hay que saber como darlas para que el sistema responda.</p>
+<p>Este es un ambiente menos gráfico pero mas sencillo para dar instrucciones…sin embargo hay que saber como darlas para que el sistema responda.</p>
 <section id="ls-listar">
 <h3>ls (listar)<a class="headerlink" href="#ls-listar" title="Permalink to this heading">#</a></h3>
 <p>Cuando se entra al sistema, el directorio donde uno se encuentra es el <em>home</em>. Para saber que hay dentro de <em>home</em>, escribimos</p>
@@ -450,7 +360,7 @@ SyntaxError: invalid syntax
 </div>
 </div>
 </div>
-<p>Escriba ls para ver que hay en el directorio (debería estar vacío).
+<p>Escriba ls para ver qué hay en el directorio (debería estar vacío).
 Para volver al directorio parental escribimos</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -477,7 +387,7 @@ Para volver al directorio parental escribimos</p>
 <h2>Copiar archivos<a class="headerlink" href="#copiar-archivos" title="Permalink to this heading">#</a></h2>
 <section id="cp-copy">
 <h3>cp (copy)<a class="headerlink" href="#cp-copy" title="Permalink to this heading">#</a></h3>
-<p>El comando para copiar un archivos arch1 en el directorio actual a un archivo identico pero nombrado arch2 es:</p>
+<p>El comando para copiar un archivo arch1 en el directorio actual a un archivo identico pero nombrado arch2 es:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>$ cp arch1 arch2
@@ -613,14 +523,14 @@ Ahora intente escribir la palabra con mayúscula:</p>
 <h3>Conclusiones: la línea de comando<a class="headerlink" href="#conclusiones-la-linea-de-comando" title="Permalink to this heading">#</a></h3>
 <p>La línea de comando de linux es muy poderoso. Tan poderoso que la gran mayoría de los servidores y super computadoras del mundo funcionan con los sistemas linux (sin interfase gráfica, i.e. usando solamente la línea de comando).</p>
 <p>Aquí navegamos por algunos ejemplos simples, pero esto es solo un “abre-bocas”. Por ejemplo, el comando <code class="docutils literal notranslate"><span class="pre">grep</span></code> es muy importante y útil para buscar patrones, and <code class="docutils literal notranslate"><span class="pre">wget</span></code> para bajar archivos. Ambos comandos mucho mas rápidos que si se usaran la interfase gráfica.</p>
-<p>Para profundizar sobre linux hay varios tutoriales, por ejemplo <a class="reference external" href="https://ryanstutorials.net/linuxtutorial/">tutoria llinux</a></p>
+<p>Para profundizar sobre linux hay varios tutoriales, por ejemplo <a class="reference external" href="https://ryanstutorials.net/linuxtutorial/">tutorial linux</a> o <a class="reference external" href="https://swcarpentry.github.io/shell-novice/">este</a> recomendado por una compañera del curso</p>
 </section>
 </section>
 <section id="scripts-ejecutables">
 <h2>Scripts Ejecutables<a class="headerlink" href="#scripts-ejecutables" title="Permalink to this heading">#</a></h2>
 <p>Ahora que ya estamos un poco familiarizados con la línea de comando, vamos a utilizar algunas herramientas básicas de programación: al digitar un comando, este da una instrucción para recibir una inofrmación. Este proceso se puede <strong>automatizar</strong> (por ejemplo mover, renombrar y copiar archivos), escribiendo el comando en un <strong>script</strong>.</p>
 <p>Los scripts son la forma mas simple de escribir un programa. Vamos a escribir un <strong>script bash</strong> y a ejecutarlo.</p>
-<p>Dentro del directorio <code class="docutils literal notranslate"><span class="pre">biocomp_clase1</span></code> vamos a crear un nuevo archivo llamado <code class="docutils literal notranslate"><span class="pre">miscript.sh</span></code>. You can do this using the default (graphical) text editor in MyBinder. Puedes hacer esto utilizando un  editor de texto de terminal llamado <code class="docutils literal notranslate"><span class="pre">nano</span></code></p>
+<p>Dentro del directorio <code class="docutils literal notranslate"><span class="pre">biocomp_clase1</span></code> vamos a crear un nuevo archivo llamado <code class="docutils literal notranslate"><span class="pre">miscript.sh</span></code>. Puedes hacer esto utilizando un  editor de texto de terminal llamado <code class="docutils literal notranslate"><span class="pre">nano</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ nano miscript.sh
 </pre></div>
 </div>
@@ -629,12 +539,12 @@ Ahora intente escribir la palabra con mayúscula:</p>
 </pre></div>
 </div>
 <p><strong>Bash</strong> es un “interpretador” que lee el archivo y entiende cómo ejecutar el comando.</p>
-<section id="make-a-file-executable">
-<h3>Make a file executable<a class="headerlink" href="#make-a-file-executable" title="Permalink to this heading">#</a></h3>
+<section id="hacer-un-archivo-ejecutable">
+<h3>Hacer un archivo ejecutable<a class="headerlink" href="#hacer-un-archivo-ejecutable" title="Permalink to this heading">#</a></h3>
 <p>Liste los archivos en el directorio con la opción <code class="docutils literal notranslate"><span class="pre">-l</span></code> para mas información. Here is how it looks like on MyBinder:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -l
 total 12
--rw-r--r-- 1 usuario root   18 Jun 26 10:56 myscript.sh
+-rw-r--r-- 1 usuario root   18 Jun 26 10:56 miscript.sh
 </pre></div>
 </div>
 <p>La primera lista de caracteres indica los <strong>permisos</strong> del archivo. Aquí vemos que el usuario tiene permiso de lectura (<code class="docutils literal notranslate"><span class="pre">r</span></code>) y escritura (<code class="docutils literal notranslate"><span class="pre">w</span></code>), pero no de ejecución.
@@ -647,9 +557,9 @@ Para entender mejor este tema puede consultar este <a class="reference external"
 </pre></div>
 </div>
 <div class="alert alert-block alert-warning">
-<b>Ejemplo de script:</b> Con frecuencia se recomienda añadir una primera línea en el scrip que indica el interpretador que se debe usar. En este caso es el interpretador por defecto (bash), pero no es siempre el caso. Además se usa escribir una línea que describe el propósito del script y que está precedida por el símbolo ``r`` que indica que es un comentario
+<b>Ejemplo de script:</b> Con frecuencia se recomienda añadir una primera línea en el script que indica el interpretador que se debe usar. En este caso es el interpretador por defecto (bash), pero no es siempre el caso. Además se usa escribir una línea que describe el propósito del script y que está precedida por el símbolo ``#`` que indica que es un comentario
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
-# Script de ejemplo para la clase 1 de Comp. Biol
+# Script de ejemplo para la práctica 1 de Comp. Biol
 
 echo Hello World!
 </pre></div>
@@ -658,7 +568,7 @@ echo Hello World!
 </section>
 <section id="variables-declaraciones-y-loops">
 <h2>Variables, declaraciones y loops<a class="headerlink" href="#variables-declaraciones-y-loops" title="Permalink to this heading">#</a></h2>
-<p>Una variable: …</p>
+<p>Una variable es un término que contiene almacenada un dato con información simple y que puede cambiar el dato.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>$ counter=1
@@ -685,13 +595,14 @@ Un ejemplo simple</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>$ num1=10
 $ num2=5
 
-if [ $num1 -gt $num2 ]; then
+if [ $num1 -gt $num2 ]; then  
 echo &quot;num1 es $num1 y es mayor que $num2&quot;
 fi
 </pre></div>
 </div>
 </div>
 </div>
+<p>Haga el ejercicio de invertir el chequeo entre corchetes y observe que pasa</p>
 </section>
 <section id="while-loop">
 <h3>While loop<a class="headerlink" href="#while-loop" title="Permalink to this heading">#</a></h3>
@@ -719,8 +630,8 @@ $ done
 <li><p>Linea 1: inicializa la variable <strong>counter</strong> con un valor.</p></li>
 <li><p>Linea 2: Chequea que mientras (<strong>While</strong>) la declaración es verdad (counter es menor o igual a 10)</p></li>
 <li><p>Linea 3: ejecutemos el siguiente comando.</p></li>
-<li><p>Linea 4: aquí podemos poner cualquier comando. En este caso Here <strong>echo</strong> se utiliza porque es simple para ilustrar el propósito.</p></li>
-<li><p>Linea 6: incrementamos la variable <strong>counter</strong> por 1.</p></li>
+<li><p>Linea 4: aquí podemos poner cualquier comando. En este caso <strong>echo</strong> se utiliza porque es simple para ilustrar el propósito.</p></li>
+<li><p>Linea 6: incrementamos la variable <strong>counter</strong> por 1 [counter++].</p></li>
 <li><p>Linea 7: al final del loop, vuelve al inicio a hacer el chequeo. Si es verdad, ejecuta el comando, si es falso conitnua a la siguiente linnea.</p></li>
 </ul>
 <p>Este programa que ejecutamos en la terminal lo podemos escribir en un script para correrlo las veces que necesitemos y para registrar lo que hicimos</p>
@@ -736,7 +647,6 @@ do
 echo $counter
 ((counter++))
 done
-echo All done
 </pre></div>
 </div>
 </div>
@@ -746,7 +656,7 @@ echo All done
 <b>Ejercicio</b> Haga el script ejecutable y córralo </div></section>
 <section id="for-loop">
 <h3>For loop<a class="headerlink" href="#for-loop" title="Permalink to this heading">#</a></h3>
-<p>Este loop toma cada item en una lista (en orden, uno despeués del otro), asigna ese item como valor a la variable <strong>var</strong>, ejecuta los comandos entre <strong>do</strong> y <strong>done</strong> y vuelve al inicio para tomar el siguiente item y repetir recurrentemente.  Tiene la siguiente sintaxis:</p>
+<p>Este loop toma cada item en una lista (en orden, uno después del otro), asigna ese item como valor a la variable <strong>var</strong>, ejecuta los comandos entre <strong>do</strong> y <strong>done</strong> y vuelve al inicio para tomar el siguiente item y repetir recurrentemente.  Tiene la siguiente sintaxis:</p>
 <p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">var</span> <span class="pre">in</span> <span class="pre">&lt;list&gt;</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">do</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;comando&gt;</span></code></p>
@@ -760,10 +670,10 @@ echo All done
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>$ mkdir sars_covid19
-$ cd sars_covid19
 $ curl http://ftp.ensemblgenomes.org/pub/viruses/fasta/sars_cov_2/dna/Sars_cov_2.ASM985889v3.dna_rm.toplevel.fa.gz -o ./sars_covid19/Sars_cov.dna.fa.gz
 $ curl http://ftp.ensemblgenomes.org/pub/viruses/fasta/sars_cov_2/pep/Sars_cov_2.ASM985889v3.pep.all.fa.gz -o ./sars_covid19/Sars_cov.prot.fa.gz
 $ curl http://ftp.ensemblgenomes.org/pub/viruses/fasta/sars_cov_2/cds/Sars_cov_2.ASM985889v3.cds.all.fa.gz -o ./sars_covid19/Sars_cov.cds.fa.gz
+ 
 </pre></div>
 </div>
 </div>
@@ -771,8 +681,17 @@ $ curl http://ftp.ensemblgenomes.org/pub/viruses/fasta/sars_cov_2/cds/Sars_cov_2
 <p><strong>curl</strong> (“Client url”) es un comando de línea que permite comunicarse con un servidor. La opción <code class="docutils literal notranslate"><span class="pre">-o</span></code> le asigna un nombre al archivo (en este caso simplificamos el nombre). Donde crees que quedaron los archivos?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>cd sars-covid19
-for f in $(ls);
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">sars</span><span class="o">-</span><span class="n">covid19</span>
+<span class="n">ls</span>
+<span class="n">gunzip</span> <span class="o">*.</span><span class="n">gz</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cuando descargamos los archivos los nombramos con un <code class="docutils literal notranslate"><span class="pre">./sars_covid</span></code> que precede al nombre. Esto indica que lo guarde en el directorio llamado <code class="docutils literal notranslate"><span class="pre">sars_covid</span></code> que esta dentro del directorio donde nos encontramos <code class="docutils literal notranslate"><span class="pre">.</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>for f in $(ls);
     do wc -l $f;
         done
 </pre></div>
@@ -781,7 +700,25 @@ for f in $(ls);
 </div>
 <p>Note como listamos el directorio usando <code class="docutils literal notranslate"><span class="pre">ls</span></code> y lo encerramos en el comanod  <code class="docutils literal notranslate"><span class="pre">$()</span></code>. Esto nos permite crear una variable que contiene el resultado del comando <code class="docutils literal notranslate"><span class="pre">ls</span></code>.
 Luego iteramos sobre cada item del directorio <strong>sars_covid19</strong> y contamos el número de líneas con <code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">-l</span></code></p>
-</section>
+<div class="alert alert-block alert-info">
+<b>Ejercicio Evaluable</b> 
+<ol class="arabic simple">
+<li><p>Entrar a NCBI <a class="reference external" href="https://www.ncbi.nlm.nih.gov/">https://www.ncbi.nlm.nih.gov/</a></p></li>
+<li><p>Escoger en el tipo de base de datos “Protein”</p></li>
+<li><p>En el campo de búsqueda escribir el identificador “AEO86768”</p></li>
+<li><p>Escoger el formato “fasta”</p></li>
+<li><p>Ir a “send to” y escoger “file”</p></li>
+<li><p>Descargar la secuencia</p></li>
+<li><p>Crear una carpeta nueva</p></li>
+<li><p>Renombrar el archivo descargado (debería estar en “~/Downloads”) y copiarlo en la nueva carpeta</p></li>
+<li><p>Repetir el proceso con los siguientes identificadores en NCBI: “AHN64774”, “AAZ67052”, “QIQ54048”</p></li>
+<li><p>crear un script en bash (con el encabezado sobre el interpretador y un comentario del propósito) que itere sobre los archivos del directorio y despliegue los nombres de los archivos. Nombre el script script_eval1_sunombre.sh</p></li>
+<li><p>ejecute script_eval1_sunombre.sh (tenga en cuenta los permisos)</p></li>
+<li><p>ejecute el comando: cat script_eval1_sunombre.sh &gt; reporte1.txt</p></li>
+<li><p>Ejecute el comando: history &gt;&gt; reporte1.txt</p></li>
+<li><p>Suba por la asignación de tarea de Teams el archivo reporte.txt</p></li>
+</ol>
+  </div></section>
 </section>
 </section>
 
@@ -825,55 +762,6 @@ Luego iteramos sobre cada item del directorio <strong>sars_covid19</strong> y co
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-linux">Qué es Linux</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-linux">Uso de linux</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comandos-basicos">Comandos básicos</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ls-listar">ls (listar)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-de-los-directorios">Estructura de los directorios</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-directorios">Crear directorios</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mkdir-make-directory">mkdir (make directory)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cambiar-directorios">Cambiar directorios</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cd-change-directory">cd (change directory)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#home">~ (home)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copiar-archivos">Copiar archivos</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cp-copy">cp (copy)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-tab">Usando [TAB]</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moviendo-archivos">Moviendo archivos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remover-archivos-y-directorios">Remover archivos y directorios</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mostrar-los-contenidos-de-un-archivo-en-la-pantalla">Mostrar los contenidos de un archivo en la pantalla</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-the-contents-of-a-file">Searching the contents of a file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusiones-la-linea-de-comando">Conclusiones: la línea de comando</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts-ejecutables">Scripts Ejecutables</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-a-file-executable">Make a file executable</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-declaraciones-y-loops">Variables, declaraciones y loops</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if">If</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop">While loop</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop">For loop</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
