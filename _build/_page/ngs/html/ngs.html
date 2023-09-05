@@ -1,0 +1,526 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Biología como una ciencia data-intensiva &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ngs';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Jupyter Book</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Biología como una ciencia data-intensiva
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ngs.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Biología como una ciencia data-intensiva</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Biología como una ciencia data-intensiva</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-secuenciacion">Tipos de secuenciación</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#illumina">Illumina</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#secuencias-crudas-de-sars-cov">Secuencias crudas de SARS-CoV</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calidad-de-las-secuencias">Calidad de las secuencias</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fastqc">FASTQC</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="biologia-como-una-ciencia-data-intensiva">
+<h1>Biología como una ciencia data-intensiva<a class="headerlink" href="#biologia-como-una-ciencia-data-intensiva" title="Permalink to this heading">#</a></h1>
+<p>Gracias a los avances en tconología <em>high-throughput</em> las secuencias y genomas de miles de organismos están disponible. Desde virus de unos miles de pares de bases hasta plantas con billones de pb. Asimismo, los metagenomas de comunidades de bacterias y microorganismos están siendo secuenciados a gran escala. Pero las secuencias no son los únicos datos disponibles, existen otros tipos de datos que están expandiendo la dimensión de información en biología. A medida que avanza la colección de datos, es imprescindible desarrollar la habilidad de interpretarlos y combinarlos para proponer nuevas hipótesis. El reto actual no es el de adquirir los datos sino el de analizarlos e interpretarlos para obtener conocimiento sobre los sistemas biológicos.</p>
+<p>En la sesión de hoy tendremos una introducción de la secuenciación <em>high-throughput</em> que iniciaron este “big-bang” de datos.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="tipos-de-secuenciacion">
+<h1>Tipos de secuenciación<a class="headerlink" href="#tipos-de-secuenciacion" title="Permalink to this heading">#</a></h1>
+<img src="sanger_ngs.jpeg"/>
+<ul class="simple">
+<li><p><strong>Sanger</strong>: terminación de reacción de la DNA polimerasa con marcaje (radiactivo o fluorescente)
+<a class="reference external" href="https://www.youtube.com/watch?v=KTstRrDTmWI">https://www.youtube.com/watch?v=KTstRrDTmWI</a></p></li>
+<li><p><strong>High-throughput (Next Generation Sequencing)</strong>:
+<a class="reference external" href="https://www.youtube.com/watch?v=jFCD8Q6qSTM&amp;amp;list=PLK1xpTaA9PuZqvDpaEYrA5d8kbmxqjXoJ&amp;amp;index=8">https://www.youtube.com/watch?v=jFCD8Q6qSTM&amp;list=PLK1xpTaA9PuZqvDpaEYrA5d8kbmxqjXoJ&amp;index=8</a></p>
+<ul>
+<li><p><strong>Illumina</strong>: fragmetación y  marcaje luminiscente</p></li>
+<li><p><strong>Nanopore</strong>: Cambios en corriente eléctrica de nuleótidos a medida que pasan por un <em>nanopore</em> de prtoeína protein nanopore</p></li>
+</ul>
+</li>
+</ul>
+<img src="developments_in_high_throughput_sequencing.jpg"/><section id="illumina">
+<h2>Illumina<a class="headerlink" href="#illumina" title="Permalink to this heading">#</a></h2>
+<p>Es la tecnología más usada en los últimos años</p>
+<img src="Cluster_Generation.png"/></section>
+<section id="secuencias-crudas-de-sars-cov">
+<h2>Secuencias crudas de SARS-CoV<a class="headerlink" href="#secuencias-crudas-de-sars-cov" title="Permalink to this heading">#</a></h2>
+<p>Hasta ahora hemos descargado y analizado secuencias que ya están ensambladas o “limpias”, es decir que ya han pasado por filtros de calidad y se ha establecido un <em>consenso</em> para la secuencia. Sin embargo, así no es como salen del secuenciador. Cada vez que se realiza una secuenciación y se publica su análisis, las secuencias “crudas” se depositan en un repositorio. Hoy vamos a descargar las secuencias de una de las primeras variantes de Omicrón secuenciadas y depositadas en el European Nucleotide Archive (ENA) de la siguiente dirección URL:</p>
+<p><a class="reference external" href="ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR170/002/SRR17054502/SRR17054502_1.fastq.gz">ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR170/002/SRR17054502/SRR17054502_1.fastq.gz</a>
+<a class="reference external" href="ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR170/002/SRR17054502/SRR17054502_2.fastq.gz">ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR170/002/SRR17054502/SRR17054502_2.fastq.gz</a></p>
+<p>Cuantas lecturas tiene cada archivo? Por qué cree que hay dos archivos? Cual es el identificador y que significa el “_1” y “_2”?</p>
+<p>Los archivos con fromato FASTQ son una extensión del formato FASTA donde cada lectura (“read”) está compuesta por múltiples líneas</p>
+<p>Descargue las secuencias, descomprímalas y explore el archivo (recuerde que si trabaja en Apolo, esto se debe realizar vía un script de Slurm). Cuantas lecturas contiene cada archivo? Cuantas líneas contiene cada lectura y en cual de ellas está la secuencia?</p>
+<ol class="arabic simple">
+<li><p>la primera línea comienza con el símbolo “&#64;”, el identificador y la lectura. Note que como son pares de lecturas, los prefijos de id son iguales en las lecturas, pero terminan con  “/1” and “/2”.</p></li>
+<li><p>la segunda línea contiene la secuencia de nucleótidos.</p></li>
+<li><p>Una linea con el símbolo “+” indica el final de los nucleótidos.</p></li>
+<li><p>La cuarta línea contienen una colección de símbolos que representan el <em>Phred quality score</em>. El valor n-avo de calidad corresponde al n-avo de la secuencia.</p></li>
+</ol>
+<section id="calidad-de-las-secuencias">
+<h3>Calidad de las secuencias<a class="headerlink" href="#calidad-de-las-secuencias" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://medium.com/&#64;robertopreste/phred-quality-score-2837415f0af"><strong>Phred Quality Score</strong></a>:
+Para determinar la calidad de secuenciación se utiliza este índice. A cada base secuenciada se le asigna un score de calidad <em>Q</em> basado en la probabilidad (en escala logarítmica) de que la base sea correcta.</p>
+<p>Q = -10 log10(p)</p>
+<p>Al índice Q se le asigna un símbolo ASCII. Por ejemplo, si la probabilidad de error es 1 en 1000 nucleótidos, p = 0.001, entonces log10(0.001) es -3, y entonces Q = 30. El símbolo ASCII correspondiente es “?”. En resúmen, mientras mas bajo <em>p</em>, mas alto <em>Q</em>.</p>
+</section>
+</section>
+<section id="fastqc">
+<h2>FASTQC<a class="headerlink" href="#fastqc" title="Permalink to this heading">#</a></h2>
+<p>(FastQC)[<a class="reference external" href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">https://www.bioinformatics.babraham.ac.uk/projects/fastqc/</a>} es una herramienta que permite visualizar varias métricas para el control de calidad de secuencias. Se puede instalar en el computador personal o generar un ambiente en Apolo para su uso</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">lsalazarj</span><span class="nd">@apolo</span><span class="o">.</span><span class="n">eafit</span><span class="o">.</span><span class="n">edu</span><span class="o">.</span><span class="n">co</span>
+<span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">fastqc</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">fastqc</span>
+<span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">bioconda</span> <span class="n">fastqc</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="n">ssh</span> <span class="n">lsalazarj</span><span class="nd">@apolo</span><span class="o">.</span><span class="n">eafit</span><span class="o">.</span><span class="n">edu</span><span class="o">.</span><span class="n">co</span>
+        <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p>Una vez instalado fastqc, se puede correr con el comando (recuerde que en Apolo este comando debe estar dentro de un script slurm)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fastqc</span> <span class="n">SRR17054502_1</span><span class="o">.</span><span class="n">fastq</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Esto genera un archivo SRR17054502_1_fastqc.html que se puede abrir en un Browser (si lo corrió en Apolo, primero debe copiarlo a un directorio local)</p>
+<p>Como se ve la calidad de las secuencias? Por qué disminuyen hacia el final?</p>
+<p><a class="reference external" href="ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR170/039/SRR17051939/SRR17051939_1.fastq.gz">ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR170/039/SRR17051939/SRR17051939_1.fastq.gz</a>
+<a class="reference external" href="ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR170/039/SRR17051939/SRR17051939_2.fastq.gz">ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR170/039/SRR17051939/SRR17051939_2.fastq.gz</a></p>
+<div class="alert alert-block alert-info">
+<b>Ejercicio Evaluable</b> 
+<ol class="arabic simple">
+<li><p>Entre a <a class="reference external" href="https://merenlab.org/data/sar11-saavs/files/ftp-links-for-raw-data-files.txt">https://merenlab.org/data/sar11-saavs/files/ftp-links-for-raw-data-files.txt</a>
+y descargue un par cualquiera de secuencias correspondientes a un ID específico</p></li>
+<li><p>Realice una evaluación de la calidad de las secuencias usando FastQC.</p></li>
+<li><p>Suba el reporte de FastQC</p></li>
+</ol>
+  </div></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Biología como una ciencia data-intensiva</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-secuenciacion">Tipos de secuenciación</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#illumina">Illumina</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#secuencias-crudas-de-sars-cov">Secuencias crudas de SARS-CoV</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calidad-de-las-secuencias">Calidad de las secuencias</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fastqc">FASTQC</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
